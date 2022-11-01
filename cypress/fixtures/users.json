@@ -1,0 +1,8 @@
+{
+  "jimmy": {
+    "firstName": "Jimmy",
+    "lastName": "Horse",
+    "emailAddress": "jimmy@horse.com",
+    "password": "password123"
+  }
+}
