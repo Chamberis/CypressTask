@@ -1,9 +1,17 @@
-export class ProductsPage {
+import {BasePage} from "./basePage";
+
+const PRODUCTS_NAME = ".productdescriptionbrand"
+const BRAND_ASC_RADIO_BUTTON = "#MobSortOptions_brand_asc"
+
+export class ProductsPage extends BasePage{
+
+
+    static checkBrandASC(){
+        cy.get(BRAND_ASC_RADIO_BUTTON).check()
+    }
 
     static verifyFirstWord(word) {
         this.hasText(PRODUCTS_NAME, word)
-        console.log("1");
-        console.log(PRICE);
     }
 
 

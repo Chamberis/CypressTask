@@ -1,5 +1,6 @@
 export class Registration{
 
+
     static userRegistration(name, lastName, email, password){
         cy.get("#Registration_FirstName").type(name)
         cy.get("#Registration_LastName").type(lastName)
@@ -9,7 +10,7 @@ export class Registration{
         cy.get("#RegistrationSubmit").click()
     }
 
-    static verifyingUserLogin() {
+    static verifyingUserRegistration() {
         cy.get("#divAccount").trigger('mouseover')
         cy.get(".logoutTxt").last().contains('Sign out')
     }
