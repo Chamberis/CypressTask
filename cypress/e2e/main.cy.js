@@ -47,13 +47,9 @@ describe('Registering and logging test cases', () => {
   })
 
   it("Sale", () => {
-    cy.visit("sale/mens-sale-top-picks")
-    cy.get("#onetrust-accept-btn-handler").click()
+    BasePage.visitPage("/sale/mens-sale-top-picks")
+    BasePage.acceptCookies()
     cy.wait(1000)
-
-
-    // let discountPrice = cy.get("span.CurrencySizeLarge").first();
-    // console.log(discountPrice)
     BasePage.compareTwoValues()
   })
 
