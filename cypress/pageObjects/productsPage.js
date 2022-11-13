@@ -34,8 +34,10 @@ export class ProductsPage extends BasePage {
       productPrice.push(el.text().replace("$", ""));
     });
 
-    cy.get(discountedPrice).each((el) => {
+    cy.get(SALE_PRICE).each((el) => {
       salePrice.push(el.text().replace("$", ""));
+
+      expect(productPrice).to.be.gt(salePrice)
     });
   }
 }

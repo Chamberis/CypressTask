@@ -24,7 +24,7 @@ export class Registration extends BasePage {
       let chosenUser = users[user];
       this.type(FIRST_NAME_FIELD, chosenUser.firstName);
       this.type(LAST_NAME_FIELD, chosenUser.lastName);
-      this.type(EMAIL_FIELD, chosenUser.emailAddress);
+      this.type(EMAIL_FIELD, chosenUser.email);
       this.type(PASSWORD_FIELD, chosenUser.userPassword);
       this.type(CONFIRM_PASSWORD_FIELD, chosenUser.userPassword);
     });

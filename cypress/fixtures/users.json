@@ -2,7 +2,7 @@
   "jimmy": {
     "firstName": "Jimmy",
     "lastName": "Horse",
-    "emailAddress": "jimmy@horse.com",
+    "email": "jimmy@horse.com",
     "userPassword": "password123"
   }
 }
