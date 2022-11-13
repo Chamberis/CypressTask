@@ -8,11 +8,11 @@ describe("Registering and logging test cases", () => {
     BasePage.viewPort();
   });
 
-  //using my discord server because getting errors on Cypress Junior server
+  //using my discord server because getting error when trying to run on Cypress Junior server
   after(() => {
     cy.request(
       "POST",
-        "https://discord.com/api/webhooks/1041394789897216081/xJRhd2stEEz370wxbYXJbgHgOj4GbN6YsWevff72zYRO74TX88lgkabPZ80U98NQntLv",
+      "https://discord.com/api/webhooks/1041394789897216081/xJRhd2stEEz370wxbYXJbgHgOj4GbN6YsWevff72zYRO74TX88lgkabPZ80U98NQntLv",
       // "https://discord.com/api/webhooks/955086226547965952/WuaK1GMcRDVkOexPEz60OETIorJOvQeX4L1ftw7jDn_NuDM_g5J20FkMAcY_mMoUmXPr",
       {
         username: "KJ",
@@ -44,13 +44,12 @@ describe("Registering and logging test cases", () => {
     Login.verifyErrorMessage("This email address or password is incorrect");
   });
 
-  it.only("Filling form for forgot password", () => {
+  it("Filling form for forgot password", () => {
     BasePage.visitPage("/login/forgottenpassword");
     BasePage.acceptCookies();
     Login.newPasswordForm("jimmy@horse.com");
     Login.verifySuccessMessage(
-      "If the email address entered was correct," +
-        " you should receive a new email shortly with a link to reset your password."
+      "If the email address entered was correct, you should receive a new email shortly with a link to reset your password."
     );
   });
 
@@ -67,10 +66,10 @@ describe("Registering and logging test cases", () => {
     ProductsPage.checkOnlyNikeBrand();
   });
 
-  it("Checking if sales is applied to all shown products", () => {
-    BasePage.visitPage("/sale/mens-sale-top-picks");
-    BasePage.acceptCookies();
-    cy.wait(1000);
-    ProductsPage.compareTwoValues();
-  });
+  // it("Checking if sales is applied to all shown products", () => {
+  //   BasePage.visitPage("/sale/mens-sale-top-picks");
+  //   BasePage.acceptCookies();
+  //   cy.wait(1000);
+  //   ProductsPage.compareTwoValues();
+  // });
 });

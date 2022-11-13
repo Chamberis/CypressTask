@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: 'zid76c',
+  projectId: "zid76c",
   e2e: {
     chromeWebSecurity: false,
     baseUrl: "https://lt.sportsdirect.com",

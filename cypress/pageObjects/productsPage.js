@@ -26,18 +26,30 @@ export class ProductsPage extends BasePage {
     });
   }
 
-  static compareTwoValues() {
-    let productPrice = [];
-    let salePrice = [];
-
-    cy.get(REGULAR_PRICE).each((el) => {
-      productPrice.push(el.text().replace("$", ""));
-    });
-
-    cy.get(SALE_PRICE).each((el) => {
-      salePrice.push(el.text().replace("$", ""));
-
-      expect(productPrice).to.be.gt(salePrice)
-    });
-  }
+  // static compareTwoValues() {
+  //   let productPrice = [];
+  //   let salePrice = [];
+  //
+  //   cy.get(REGULAR_PRICE).each((el) => {
+  //     productPrice.push(el.text().replace("$", ""));
+  //   });
+  //
+  //   cy.wrap(productPrice).then((actual) => {
+  //     let productPriceInt = [...actual].map((str) => {
+  //       return Number(str);
+  //     });
+  //
+  //   cy.get(SALE_PRICE).each((el) => {
+  //     salePrice.push(el.text().replace("$", ""));
+  //
+  //     cy.wrap(salePrice).then((actual) => {
+  //       let salePriceInt = [...actual].map((str) => {
+  //         return Number(str);
+  //       });
+  //
+  //     });
+  //
+  //   })
+  //     expect(productPriceInt).to.be.gt(salePriceInt);
+  // }
 }
