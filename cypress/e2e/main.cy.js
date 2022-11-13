@@ -37,7 +37,7 @@ describe("Registering and logging test cases", () => {
     Login.verifyUserLogin();
   });
 
-  it("Trying to log in with invalid login details", () => {
+  it("Trying to error message when log in with invalid login details", () => {
     BasePage.visitPage("/login");
     BasePage.acceptCookies();
     Login.userLogin("jimmy@horse.com", "3435435rts5a5545a");
