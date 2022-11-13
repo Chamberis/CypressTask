@@ -42,7 +42,7 @@ describe("Registering and logging test cases", () => {
     Login.verifyErrorMessage("This email address or password is incorrect");
   });
 
-  it("Forgot your password", () => {
+  it("Filling form for forgot password", () => {
     BasePage.visitPage("/login");
     BasePage.acceptCookies();
     Login.newPasswordForm("jimmy@horse.com");
@@ -52,7 +52,7 @@ describe("Registering and logging test cases", () => {
     );
   });
 
-  it("AZ", () => {
+  it("Sorting shown products - By Brand - A to Z", () => {
     BasePage.visitPage("/mens/footwear/trainers");
     BasePage.acceptCookies();
     ProductsPage.checkBrandASC();
@@ -65,7 +65,7 @@ describe("Registering and logging test cases", () => {
     ProductsPage.checkOnlyNikeBrand();
   });
 
-  it.only("Sale", () => {
+  it("Checking if sales is applied to all shown products", () => {
     BasePage.visitPage("/sale/mens-sale-top-picks");
     BasePage.acceptCookies();
     cy.wait(1000);

@@ -3,10 +3,12 @@
     "cypress": "^10.11.0",
     "prettier": "^2.7.1",
     "mochawesome": "^7.1.3",
-    "mochawesome-merge": "^4.2.1"
+    "mochawesome-merge": "^4.2.1",
+    "marge": "^1.0.1"
   },
   "scripts": {
     "cypress": "cypress open",
+    "cypress:run": "npx cypress run --record --key f97bdce1-6325-41e3-8ea5-b5900f54822d",
     "prettier": "prettier --write ."
   }
 }
