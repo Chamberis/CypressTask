@@ -10,10 +10,9 @@ describe('Registering and logging test cases', () => {
   })
 
 
-  it.only('Registering a new user', () => {
+  it('Registering a new user', () => {
     BasePage.visitPage("/registration")
     BasePage.acceptCookies()
-    Registration.userRegistration("Jimmy", "Horse", "jimmy@horse.com", "password123" )
     Registration.inputUserDetailsForRegistration("jimmy")
     Registration.clickOnRegistrationButton()
     Registration.verifyingUserRegistration()
@@ -49,11 +48,18 @@ describe('Registering and logging test cases', () => {
     ProductsPage.verifyFirstWord('adidas')
   })
 
-  it("Sale", () => {
+
+  it("Select only Nike brand", () => {
+    BasePage.visitPage("/mens/footwear/trainers")
+    BasePage.acceptCookies()
+    ProductsPage.checkOnlyNikeBrand()
+  })
+
+  it.only("Sale", () => {
     BasePage.visitPage("/sale/mens-sale-top-picks")
     BasePage.acceptCookies()
     cy.wait(1000)
-    BasePage.compareTwoValues()
+    ProductsPage.compareTwoValues()
   })
 
 

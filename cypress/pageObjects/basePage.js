@@ -1,3 +1,5 @@
+const COOKIES_BUTTON = "#onetrust-accept-btn-handler"
+
 export class BasePage {
 
     static viewPort() {
@@ -5,7 +7,7 @@ export class BasePage {
     }
 
     static acceptCookies() {
-    cy.get("#onetrust-accept-btn-handler").click()
+    cy.get(COOKIES_BUTTON).click()
     }
 
     static type(selector,text) {

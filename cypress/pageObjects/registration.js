@@ -10,6 +10,7 @@ const SIGN_IN_RIBBON = "#divAccount"
 const SIGN_OUT_TEXT = ".logoutTxt"
 
 
+
 export class Registration extends BasePage{
 
     static clickOnRegistrationButton() {

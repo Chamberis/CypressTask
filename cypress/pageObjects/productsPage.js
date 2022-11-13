@@ -2,6 +2,9 @@ import {BasePage} from "./basePage";
 
 const PRODUCTS_NAME = ".productdescriptionbrand"
 const BRAND_ASC_RADIO_BUTTON = "#MobSortOptions_brand_asc"
+const SELECT_NIKE_BRAND = '[data-parsedfiltername="Nike"]'
+const REGULAR_PRICE = ".s-smalltext"
+const SALE_PRICE = ".s-largered"
 
 export class ProductsPage extends BasePage{
 
@@ -14,35 +17,30 @@ export class ProductsPage extends BasePage{
         this.hasText(PRODUCTS_NAME, word)
     }
 
+    static checkOnlyNikeBrand(){
+       cy.get(SELECT_NIKE_BRAND).click();
+       let brandArray = []
+       cy.wait(2000)
+       cy.get(PRODUCTS_NAME).each(el => {
+           brandArray.push(el.text())
+
+           expect(brandArray).to.match(/Nike/)
+       })
+
+    }
 
     static compareTwoValues() {
 
-        let number1 = [];
-        let number2 = [];
+        let productPrice = [];
+        let salePrice = [];
 
+        cy.get(REGULAR_PRICE).each((el) => {
+            productPrice.push(el.text().replace("$", ""));
+        });
 
-        cy.get(PRODUCT_PRICES).each(el => {
-            number1.push(parseInt((el.text().replace("€", ""))))
-        })
-
-        // cy.get(DISCOUNTED_PRICES).each(el => {
-        //     number2.push(parseInt((el.text().replace("€", ""))))
-        //
-        //     expect(number1).to.be.gt(number2)
-        // })
-        let number;
-        cy.get(DISCOUNTED_PRICES).each($el => {
-            number = parseInt(
-                $el.text()
-                    // match number, including spaces as number
-                    //  separators
-                    // remove non-numeric characters
-                    .replace("€", ''),
-                // interpret as base-10
-                10
-            )
-            console.log(number)
-        })
+        cy.get(discountedPrice).each((el) => {
+            salePrice.push(el.text().replace("$", ""));
+        });
 
 
     }
