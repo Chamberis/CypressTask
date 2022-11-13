@@ -8,6 +8,14 @@ export class BasePage {
     cy.get("#onetrust-accept-btn-handler").click()
     }
 
+    static type(selector,text) {
+        cy.get(selector).type(text)
+    }
+
+    static click(selector) {
+        cy.get(selector).click()
+    }
+
     static visitPage(url) {
         cy.visit(url)
     }
@@ -15,6 +23,7 @@ export class BasePage {
         cy.wait(2000)
         cy.get(MESSAGE).first().should("have.text", text)
     }
+
 
 
 }

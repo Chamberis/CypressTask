@@ -3,6 +3,6 @@
     "firstName": "Jimmy",
     "lastName": "Horse",
     "emailAddress": "jimmy@horse.com",
-    "password": "password123"
+    "userPassword": "password123"
   }
 }

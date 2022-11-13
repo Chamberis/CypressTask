@@ -14,13 +14,16 @@ describe('Registering and logging test cases', () => {
     BasePage.visitPage("/registration")
     BasePage.acceptCookies()
     Registration.userRegistration("Jimmy", "Horse", "jimmy@horse.com", "password123" )
+    Registration.inputUserDetailsForRegistration("jimmy")
+    Registration.clickOnRegistrationButton()
     Registration.verifyingUserRegistration()
   })
 
   it("Logging in with an existing user", () => {
     BasePage.visitPage("/login")
     BasePage.acceptCookies()
-    Login.userLogin("jimmy@horse.com", "password123")
+    Login.inputUserDetailsForLogin()
+    Login.clickOnLoginButton()
     Login.verifyUserLogin()
   })
 

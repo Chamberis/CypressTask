@@ -36,4 +36,17 @@ export class Login extends BasePage{
     static verifySuccessMessage(message) {
         this.hasText(LOST_PASSWORD_SUCCESS_MESSAGE,message)
     }
+
+    static inputUserDetailsForLogin(user) {
+        cy.fixture("users").then(users => {
+            let chosenUser = users[user]
+            this.type(LOGIN_EMAIL_FIELD,chosenUser.emailAddress)
+            this.type(LOGIN_PASSWORD_FIELD,chosenUser.userPassword)
+        })
+
+    }
+    static clickOnLoginButton() {
+        this.click(LOGIN_BUTTON)
+    }
+
 }
