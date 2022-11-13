@@ -8,16 +8,16 @@ describe("Registering and logging test cases", () => {
     BasePage.viewPort();
   });
 
-  after(() => {
-    cy.request(
-      "POST",
-      "https://discord.com/api/webhooks/955086226547965952/WuaK1GMcRDVkOexPEz60OETIorJOvQeX4L1ftw7jDn_NuDM_g5J20FkMAcY_mMoUmXPr",
-      {
-        username: "KJ",
-        content: "All tests completed.",
-      }
-    );
-  });
+  // after(() => {
+  //   cy.request(
+  //     "POST",
+  //     "https://discord.com/api/webhooks/955086226547965952/WuaK1GMcRDVkOexPEz60OETIorJOvQeX4L1ftw7jDn_NuDM_g5J20FkMAcY_mMoUmXPr",
+  //     {
+  //       username: "KJ",
+  //       content: "All tests completed.",
+  //     }
+  //   );
+  // });
 
   it("Registering a new user", () => {
     BasePage.visitPage("/registration");
